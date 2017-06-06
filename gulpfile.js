@@ -18,7 +18,7 @@ gulp.task('docs', function(cb) {
     });
 });
 
-gulp.task('scripts', ['docs'], () => {
+gulp.task('scripts', ['docs', 'assets'], () => {
     const tsResult = tsProject.src()
         .pipe(tsProject());
     return tsResult.js.pipe(gulp.dest('dist'));

@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const JSON_FILES = ['src/*.json', 'src/**/*.json'];
+const JSON_FILES = ['src/*.json', 'src/**/*.json', 'src/*.html', 'src/**/*.html'];
 const del = require('del');
 const exec = require('child_process').exec;
 
@@ -18,14 +18,14 @@ gulp.task('docs', function(cb) {
     });
 });
 
-gulp.task('scripts', ['docs', 'assets'], () => {
+gulp.task('build', ['docs', 'assets'], () => {
     const tsResult = tsProject.src()
         .pipe(tsProject());
     return tsResult.js.pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', ['scripts'], () => {
-    gulp.watch('src/**/*.ts', ['scripts']);
+gulp.task('watch', ['build'], () => {
+    gulp.watch('src/**/*.ts', ['build']);
 });
 
 gulp.task('assets', function() {

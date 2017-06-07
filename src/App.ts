@@ -34,9 +34,9 @@ class App {
     let router = express.Router();
     // placeholder route handler
     router.get('/', (req, res, next) => {
-      res.json({
-        message: 'Hello World!'
-      });
+      var fileName = __dirname+'/README.html';
+      res.sendFile(fileName);
+      console.log("Send the file: "+fileName);
     });
     this.express.use('/', router);
     // Setup the routes to the Hero database service.

@@ -16,7 +16,7 @@ export class EchoRouter {
 
   /**
    * This is a Noop call for any GET/DEL or other REST methods that
-   * have no mening for this call. The RESTful interface of the 
+   * have no meaning for this call. The RESTful interface of the 
    * Matching Server Mapper must pass a large JSON document to the 
    * downstream system so POST is the only method supported.  
    * 

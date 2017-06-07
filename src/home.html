@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <h1>Edcho-Server</h1>
+    <p>This web server will echo back the JSON you send to it (when called correctly) along with the generated data (Heroes information) from the simulated downstream system.</p>
+    <p>You can also force the server to return errors by adding key data to the JSON document as input to a POST call.</p>
+    <p>You can call the <b>API</B> using <i>curl</i> or some other command to make a POST http call.</p>
+    <pre>
+curl -i \
+	-H "Content-Type: application/json" \
+	-H "Accept: application/json" \
+	-H "X-HTTP-METHOD-Override: PUT" \
+	-X POST \
+	-d '{"username":"xyz","password":"xyz"}' \
+	localhost:3000/api/v1/echo
+    </pre>
+    <p>Here is the same command on one line:</p>
+    <pre>curl -i -H "Content-Type: application/json" -H "Accept: application/json" -H "X-HTTP-METHOD-Override: PUT" -X POST -d '{"username":"xyz","password":"xyz"}' localhost:3000/api/v1/echo</pre>
+
+</body>
+
+</html>

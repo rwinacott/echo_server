@@ -74,7 +74,7 @@ $ nom install
 
 ## Test environment
 
-The following commands were used to create the test environemt. These are **not** used to initialize the test enironment of your workspace. See below for them.
+The following commands were used to create the test environment. These are **not** used to initialize the test environment of your workspace. See below for them.
 
 ```bash
 $ npm install mocha@3.1.2 chai@3.5.0 chai-http@3.0.0 --save-dev
@@ -86,7 +86,21 @@ $ npm install @types/del --save-dev
 
 ## Build
 
-To build the code run `gulp scripts`
+To build the code run `gulp build`. This will build the `./dist/*.js` files and convert the `README.md` into `./dist/README.html`.
+
+```bash
+$ gulp build
+[11:31:52] Using gulpfile ~/Development/matching/echo-service/gulpfile.js
+[11:31:52] Starting 'docs'...
+[11:31:53] Finished 'docs' after 1.55 s
+[11:31:53] Starting 'build'...
+[11:31:55] TypeScript: 2 semantic errors
+[11:31:55] TypeScript: emit succeeded (with errors)
+[11:31:55] Finished 'build' after 1.84 s
+$ 
+```
+
+You can also use the default target in `gulp` to run the `build` target and start watching the `src/*.ts` files for change.  
 
 ## Run
 
@@ -94,5 +108,9 @@ To run the service, run `npm start`
 
 ## Unit Tests
 
-To Run all unit tests, run `npm test`
+To Run all unit tests, run `npm test`.
+
+Unit tests are located in the `./test` folder. They **must** be maintained in a passing state before any `git push` of the code to the repository.
+
+
 

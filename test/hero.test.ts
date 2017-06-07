@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 
 // Get the index (root) test
-describe('GET api/v1/heroes', () => {
+describe('hero.test.ts TEST GET api/v1/heroes path', () => {
 
   it('responds with JSON array', () => {
     return chai.request(app).get('/api/v1/heroes')
@@ -41,7 +41,7 @@ describe('GET api/v1/heroes', () => {
 
 });
 
-describe('GET api/v1/heroes/:id', () => {
+describe('hero.test.ts TEST GET api/v1/heroes/:id', () => {
 
   it('responds with single JSON object', () => {
     return chai.request(app).get('/api/v1/heroes/1')

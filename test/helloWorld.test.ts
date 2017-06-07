@@ -7,20 +7,20 @@ import app from '../src/App';
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('baseRoute', () => {
+describe('helloWorld.test.ts TEST baseRoute / path', () => {
 
-  it('should be json', () => {
+  it('GET / should be html', () => {
     return chai.request(app).get('/')
     .then(res => {
-      expect(res.type).to.eql('application/json');
+      expect(res.type).to.eql('text/html');
     });
   });
-
-  it('should have a message prop', () => {
+/*
+  it('Should start with a H1 header', () => {
     return chai.request(app).get('/')
     .then(res => {
-      expect(res.body.message).to.eql('Hello World!');
+      expect(res.body.H1).to.eql('Echo-Server');
     });
   });
-
+*/
 });

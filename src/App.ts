@@ -34,7 +34,7 @@ class App {
     let router = express.Router();
     // placeholder route handler
     router.get('/', (req, res, next) => {
-      var fileName = __dirname+'/README.html';
+      var fileName = __dirname+'/home.html';
       res.sendFile(fileName);
       console.log("Send the file: "+fileName);
     });
